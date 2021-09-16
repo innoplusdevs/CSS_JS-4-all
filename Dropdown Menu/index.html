@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Dropdown Menu</title>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="content">
+      <div class="imgBx">
+        <img src="./user.png" alt="user">
+      </div>
+      <h2>People Name<br><span>Web Developer</span></h2>
+    </div>
+    <ul class="navigation">
+      <li>
+        <a href="#">
+          <ion-icon name="person-outline"></ion-icon>
+          Edit Profile
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="chatbox-outline"></ion-icon>
+          Inbox
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="settings-outline"></ion-icon>
+          Settings
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="help-circle-outline"></ion-icon>
+          Support
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Logout
+        </a>
+      </li>
+    </ul>
+    <div class="toggle">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const card = document.querySelector('.card');
+    const cardToggle = document.querySelector('.toggle');
+
+    cardToggle.onclick = () => {
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>

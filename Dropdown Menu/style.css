@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+.card {
+  background: #fff;
+  position: relative;
+  width: 350px;
+  height: 120px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 30px 10px rgba(8, 102, 131, 0.2);
+  padding: 20px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.card.active {
+  height: 400px;
+}
+
+.card .content {
+  display: flex;
+  align-items: center;
+}
+
+.card .content .imgBx {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content h2 {
+  margin-left: 15px;
+  font-size: 1.3em;
+  color: #111;
+}
+
+.card .content h2 span {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #999;
+}
+
+.navigation {
+  position: relative;
+  top: 25px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.navigation li {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.navigation li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 1.1em;
+  transition: 0.25s;
+}
+
+.navigation li a:hover {
+  color: #36b3ff;
+}
+
+.navigation li a ion-icon {
+  font-size: 1.6em;
+  margin-right: 15px;
+}
+
+.toggle {
+  background: #36b3ff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-top-left-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.toggle ion-icon {
+  color: #fff;
+  font-size: 1.4em;
+  transition: ease-in-out 0.5s;
+}
+
+.card.active .toggle ion-icon {
+  transform: rotate(-180deg);
+}
