@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Bubble Menu</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="menu">
+      <ion-icon class="open option active" name="ellipsis-vertical"></ion-icon>
+      <ion-icon class="close option" name="close-outline"></ion-icon>
+    </div>
+    <div class="option user">
+      <ion-icon name="person"></ion-icon>
+    </div>
+    <div class="option favorites">
+      <ion-icon name="heart"></ion-icon>
+    </div>
+    <div class="option inbox">
+      <ion-icon name="chatbubble"></ion-icon>
+    </div>
+    <div class="option settings">
+      <ion-icon name="settings"></ion-icon>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const menu = document.querySelector('.menu');
+    const options = Array.from(document.querySelectorAll('.option'));
+    menu.addEventListener('click', () => {
+      options.forEach(item => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(67, 49, 146);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.menu,
+.user,
+.favorites,
+.inbox,
+.settings {
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+ion-icon {
+  color: #333;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 35px;
+  height: 35px;
+  transition: all 0.35s;
+}
+
+.menu:hover,
+.user:hover,
+.favorites:hover,
+.inbox:hover,
+.settings:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
+}
+
+.menu ion-icon {
+  font-size: 1.7em;
+}
+
+.user,
+.favorites,
+.inbox,
+.settings {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.25s;
+}
+
+.menu {
+  opacity: 1;
+  top: 20px;
+  left: 20px;
+}
+
+.menu .open,
+.menu .close {
+  display: none;
+}
+
+.menu .open.active,
+.menu .close.active {
+  display: initial;
+}
+
+.user.active {
+  opacity: 1;
+  top: 0;
+  left: 70px;
+}
+
+.favorites.active {
+  opacity: 1;
+  top: 40px;
+  left: 70px;
+}
+
+.inbox.active {
+  opacity: 1;
+  top: 70px;
+  left: 40px;
+}
+
+.settings.active {
+  opacity: 1;
+  top: 80px;
+  left: 0;
+}
