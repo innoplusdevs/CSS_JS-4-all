@@ -51,7 +51,7 @@ ul li span:nth-child(5) { --n: 5; }
 ul li:nth-child(1):hover { --bg: #3b5999; }
 ul li:nth-child(2):hover { --bg: #e4405f; }
 ul li:nth-child(3):hover { --bg: #0077b5; }
-ul li:nth-child(4):hover { --bg: #718076; }
+ul li:nth-child(4):hover { --bg: #25d366; }
 ul li:nth-child(5):hover { --bg: #55acee; }
 
 ul li:hover span {
