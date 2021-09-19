@@ -1,0 +1,52 @@
+/* Presentation-only CSS - Not related with the component itself */
+.toggle {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+/* Toggle */
+.toggle {
+  --t: 200ms;
+  width: 4rem;
+  height: 2.1rem;
+  cursor: pointer;
+}
+
+.toggle input {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.toggle .content {
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+  border-radius: 3rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #a7a5a5;
+  transition: all var(--t) linear;
+  position: relative;
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  height: 2.1rem;
+  width: 2.1rem;
+  background-color: #b7b7b7;
+  left: 0;
+  border-radius: 50%;
+  transform: scale(.9);
+  transition: all var(--t) linear;
+}
+
+.toggle input:checked + .content {
+  background-color: #50cd22;
+}
+
+.toggle input:checked + .content::after {
+  background-color: #ffffff;
+  left: calc(100% - 2.1rem);
+}
