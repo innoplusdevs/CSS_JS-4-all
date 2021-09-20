@@ -1,0 +1,64 @@
+@keyframes swapBefore {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes swapAfter {
+  0% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+}
+
+.counter {
+  display: flex;
+  width: max-content;
+  margin: 5rem auto;
+  align-items: center;
+}
+
+.counter .value {
+  position: relative;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.counter .value::before, .counter .value::after {
+  font-size: .7rem;
+  display: flex;
+  position: absolute;
+}
+
+.counter .value::before {
+  content: attr(prev);
+  animation-fill-mode: forwards;
+}
+
+.counter .value.change::before {
+  animation: swapBefore 800ms ease 1;
+}
+
+.counter .value::after {
+  content: attr(curr);
+  animation-fill-mode: forwards;
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+.counter .value.change::after {
+  animation: swapAfter 800ms ease 1;
+}
