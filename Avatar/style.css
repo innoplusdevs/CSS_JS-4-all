@@ -1,0 +1,75 @@
+/* Presentation-only CSS - Not related with the component itself */
+body {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+/* Avatar */
+.avatar {
+  --t: 2s;
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar #overlay {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.avatar .overlay {
+  transition: all var(--t),
+    width calc(var(--t) / 16),
+    height calc(var(--t) / 16),
+    border-radius calc(var(--t) / 8);
+  position: fixed;
+  inset: 0;
+  width: 8rem;
+  height: 8rem;
+  background-color: #0000;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar .img-container {
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all var(--t);
+  pointer-events: all; /* overwrite inherited pointer-events: none; */
+}
+
+.avatar .img-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.avatar #overlay:checked + .overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000a;
+  pointer-events: all;
+  border-radius: 0;
+}
+
+.avatar #overlay:checked + .overlay .img-container {
+  border-radius: 10px;
+}
