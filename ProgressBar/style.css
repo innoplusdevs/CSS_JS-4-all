@@ -1,0 +1,63 @@
+/* Environment settings - not needed for the component itself */
+.container {
+  width: min(25rem, 90%);
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  color: white;
+  text-align: center;
+  height: max-content;
+}
+
+body {
+  background-color: #333;
+}
+
+h2 {
+  width: 100%;
+}
+
+/* Progress bar style */
+@keyframes run {
+  0% {
+    left: 0;
+    width: 0;
+  }
+
+  50% {
+    left: 40%;
+    width: 100%;
+  }
+
+  100% {
+    left: 130%;
+    width: 0%;
+  }
+}
+
+.progress-bar {
+  width: calc(100% - .4rem);
+  height: .4rem;
+  background: #606060;
+  margin: .2rem .2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  background: #e774ff;
+  border-radius: 1rem;
+}
+
+.progress-bar:not(.indetermined)::after {
+  width: var(--p);
+  left: 0;
+}
+
+.progress-bar.indetermined::after {
+  animation: run 1.5s linear infinite;
+}
