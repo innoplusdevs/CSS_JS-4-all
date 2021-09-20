@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="./style.css">
   <title>Counter</title>
 </head>
+
 <body>
   <div class="counter">
     Likes:&nbsp;<div class="value">&nbsp;</div>
@@ -34,8 +36,8 @@
     let val = document.querySelector('.value');
     set(val, 'prev', counter.prev);
     set(val, 'curr', counter.curr);
-    
-    let anim = function() {
+
+    let anim = function () {
       counter.curr += (Math.random() * 10) | 0;
       setTimeout(() => window.requestAnimationFrame(anim), Math.random() * 1000);
     };
@@ -43,11 +45,11 @@
     anim();
 
     setInterval(() => {
-      if ( counter.prev != counter.curr ) {
+      if (counter.prev != counter.curr) {
         val.classList.add('change');
         set(val, 'curr', get(val, 'prev'));
         set(val, 'prev', counter.curr);
-        
+
         setTimeout(() => {
           counter.prev = counter.curr;
           val.classList.remove('change');
@@ -57,4 +59,5 @@
 
   }, false);
 </script>
+
 </html>
