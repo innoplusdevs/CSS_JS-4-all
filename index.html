@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>CSS_JS-4-all</title>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const container = document.querySelector(".container");
+
+    window.addEventListener('load', () => {
+      putElements();
+    });
+
+    async function loadData() {
+      const data = await fetch('https://api.github.com/repos/innoplusdevs/CSS_JS-4-all/git/trees/master?recursive=1');
+      const { tree } = await data.json();
+
+      const repos = tree.filter(({ type }) => type === 'tree');
+
+      console.log(repos);
+      return repos;
+    };
+
+    function makeList(data) {
+      data.map(({ path }) => {
+        container.innerHTML +=
+          `<div class="item">
+            <h2 class="name">${path}</h2>
+            <iframe src="./${path}/index.html" frameborder="0"></iframe>
+            <a class="link" href="https://github.com/innoplusdevs/CSS_JS-4-all/tree/master/${path.replaceAll(' ', '%20')}">Code
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </div>`;
+      });
+    };
+
+    async function putElements() {
+      const data = await loadData();
+      makeList(data);
+    }
+
+  </script>
+</body>
+
+</html>
