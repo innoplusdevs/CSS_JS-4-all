@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>CSS Rating System</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Pure CSS Rating System</h1>
+    <div class="rating" style="--rating: 5;">
+      <div class="star-wrapper"><div class="star" style="--l: 0; --h: 1;"></div></div>
+      <div class="star-wrapper"><div class="star" style="--l: 1; --h: 2;"></div></div>
+      <div class="star-wrapper"><div class="star" style="--l: 2; --h: 3;"></div></div>
+      <div class="star-wrapper"><div class="star" style="--l: 3; --h: 4;"></div></div>
+      <div class="star-wrapper"><div class="star" style="--l: 4; --h: 5;"></div></div>
+    </div>
+    <div class="rating"> <!-- This is for alignment purposes only -->
+      <input type="range" min="0" max="5" step="0.1" value="5">
+    </div>
+  </body>
+  <script>
+    window.addEventListener('load', () => {
+      let rt = document.querySelector('.rating');
+      let rg = document.querySelector('input[type=range]')
+
+      rg.addEventListener('change', (e) => rt.style.setProperty('--rating', rg.value))
+      rg.addEventListener('mousemove', (e) => rt.style.setProperty('--rating', rg.value))
+    })
+  </script>
+</html>
